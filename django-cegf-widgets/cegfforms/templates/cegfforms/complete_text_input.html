@@ -1,0 +1,24 @@
+{% block extrahead %}
+  {{ form.media }}
+{% endblock %}
+
+<table id="{{ attrs.id }}" class="complete-text-input-table {{ attrs.class }}" result_template="{{result_text}}">
+    <tr style="display:none;" name="row_template" class="row row_template ">
+        <td>
+            {% autoescape off %}{{ row }}{% endautoescape %}
+        </td>
+    </tr>
+    {% for i in init_rows %}
+        <tr class="row">
+            <td>
+                {% autoescape off %}{{ row }}{% endautoescape %}
+            </td>
+        </tr>
+    {% endfor %}
+    <tr class="row add-button">
+        <td>
+            <button type="button" name="add_btn" max_rows="{{ max_rows }}" onclick="addRowToCompleteText(this)">Add</button>
+        </td>
+    </tr>
+</table>
+<input name="{{ name }}" style="display:none;" class="complete-text-input-table-result">

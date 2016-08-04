@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block extrahead %}
+      {{ form.media }}
+    {% endblock %}
+</head>
+<body>
+<form method="POST">
+    {{ form }}
+    <button type="submit">YAHAAAA!!!</button>
+</form>
+{% if last_result != '' %}
+<div>
+    <span>
+        Last result: {{ last_result }}
+    </span>
+</div>
+{% endif %}
+</body>
+</html>
